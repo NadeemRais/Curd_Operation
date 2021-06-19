@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>CURD Operations</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-6">
+                    <h2> Update Student Data</h2>
+                    <form method="POST" action="{% url 'save_update' student.id%}">
+                        {% csrf_token %}
+            
+
+                        <label>Enter Your First Name:</label>
+                        <input type="text" name="fname" class="form-control" value="{{student.fname}}" readonly>
+
+                        <label>Enter Your Last Name:</label>
+                        <input type="text" name="lname" class="form-control" value="{{student.lname}}" readonly>
+
+                        <label>Enter Your Roll Number:</label>
+                        <input type="number" name="roll" class="form-control" value="{{student.roll}}">
+
+                        <label>Enter Your Email:</label>
+                        <input type="email" name="email" class="form-control" value="{{student.email}}">
+
+
+                        <label>Enter Your Phone Number:</label>
+                        <input type="number" name="phone" class="form-control" value="{{student.phone}}">
+
+                        <label>Enter Your Address:</label>
+                        <input type="text" name="address" class="form-control" value="{{student.address}}">
+                        <center>
+                        <input type="submit" value="Update" class="btn btn-success" style="margin-top: 5px;">
+                        <a href="{% url 'home' %}" class="btn btn-primary" style="margin-top: 5px;">Home</a>
+                        </center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>LogIn Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-6">
+                    <h2> LogIn  Student</h2>
+                    <form method="POST" action="{% url 'login_student' %}">
+                        {% csrf_token %}
+
+                        <label>Enter Your First Name:</label>
+                        <input type="text" name="fname" class="form-control">
+
+                        
+                        <label>Enter Your Email:</label>
+                        <input type="email" name="email" class="form-control">
+
+
+                        <center>
+                        <input type="submit" value="LogIn" class="btn btn-success" style="margin-top: 5px;">
+                        <a href="{% url 'home' %}" class="btn btn-primary" style="margin-top: 5px;">Home</a>
+                        </center>
+                    </form>
+                    {% for i in messages %}
+                    <p style="color: green;">{{ i }}</p>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
